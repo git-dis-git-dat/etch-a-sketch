@@ -29,11 +29,11 @@ function addTiles(number = 16){
 addTiles();
 
 function draw(){
-    const tile = document.querySelector('.tile');
-
-    tile.addEventListener('mouseover', ()=>{
-        console.log('pants');
-        tile.style.backgroundColor = 'black';
+    const tile = document.querySelectorAll('.tile');
+    tile.forEach(tile => {
+        tile.addEventListener('mouseover', ()=>{
+            tile.style.backgroundColor = 'black';
+        });
     });
 }
 
