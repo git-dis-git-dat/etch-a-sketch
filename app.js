@@ -1,15 +1,19 @@
 const container = document.querySelector('#container');
 
-function addTile(){
-    const tile = document.createElement('div');
-    tile.className = 'tile'
-    tile.textContent = 'rudy'
-    container.appendChild(tile);
-}
+// function addTile(){
+//     const tile = document.createElement('div');
+//     tile.className = 'tile'
+//     tile.textContent = 'rudy'
+//     container.appendChild(tile);
+// }
 
 // addTile();
 
 function addTiles(number = 16){
+    // clears any children on this element if they exist
+    container.textContent = '';
+    // if(!Number.isInteger(number)){return alert('You must enter a whole number.')}
+
     const dimension = 100 / number + '%';
     const totalTiles = number *= number;
     
@@ -23,3 +27,14 @@ function addTiles(number = 16){
 }
 
 addTiles();
+
+function draw(){
+    const tile = document.querySelector('.tile');
+
+    tile.addEventListener('mouseover', ()=>{
+        console.log('pants');
+        tile.style.backgroundColor = 'black';
+    });
+}
+
+draw();
