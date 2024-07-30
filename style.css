@@ -10,8 +10,8 @@
 .tile{
     box-sizing: border-box;
     flex: 1 1 auto;
-    height: 50%;
-    width: 50%;
+    /* height: 25%;
+    width: 25%; */
     background-color: aquamarine;
     border: 1px solid black;
 }
