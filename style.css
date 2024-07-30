@@ -1,4 +1,6 @@
 #container {
+    display: flex;
+    flex-wrap: wrap;
     height: 600px;
     width: 600px;
     border: 1px solid black;
@@ -6,5 +8,10 @@
 }
 
 .tile{
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    height: 50%;
+    width: 50%;
     background-color: aquamarine;
+    border: 1px solid black;
 }
