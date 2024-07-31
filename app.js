@@ -17,11 +17,29 @@ function addTiles(number = 16){
     }  
 }
 
+function makeRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function makeDark(tile){
+    let opacity = tile.style.opacity;
+    return opacity = opacity - .1;
+}
+
 function draw(){
     const tile = document.querySelectorAll('.tile');
     tile.forEach(tile => {
         tile.addEventListener('mouseover', ()=>{
             tile.style.backgroundColor = 'black';
+            // tile.style.backgroundColor = makeRandomColor();
+            // tile.style.opacity = .5;
+            tile.style.opacity = makeDark(tile);
+            console.log(tile.style.opacity);
         });
     });
 }
@@ -29,7 +47,7 @@ function draw(){
 button.addEventListener('click',()=>{
     let number = prompt('Input a value 1-100', 16);
     number = parseInt(number);
-    if(isNaN(number) || number < 1 || number > 100){return alert('You must enter a whole number greater than 0 and 100 or less.')}
+    if(isNaN(number) || number < 1 || number > 100){return alert('You must enter a whole number between 1-100.')}
     addTiles(number);
     draw();
 })
