@@ -1,13 +1,5 @@
 const container = document.querySelector('#container');
 const button = document.querySelector('#draw-btn');
-// function addTile(){
-//     const tile = document.createElement('div');
-//     tile.className = 'tile'
-//     tile.textContent = 'rudy'
-//     container.appendChild(tile);
-// }
-
-// addTile();
 
 function addTiles(number = 16){
     // clears any children on this element if they exist
@@ -25,8 +17,6 @@ function addTiles(number = 16){
     }  
 }
 
-// addTiles();
-
 function draw(){
     const tile = document.querySelectorAll('.tile');
     tile.forEach(tile => {
@@ -35,8 +25,6 @@ function draw(){
         });
     });
 }
-
-// draw();
 
 button.addEventListener('click',()=>{
     let number = prompt('Input a value 1-100', 16);
