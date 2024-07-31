@@ -26,20 +26,26 @@ function makeRandomColor() {
     return color;
 }
 
-function makeDark(tile){
-    let opacity = tile.style.opacity;
-    return opacity = opacity - .1;
+function makeDark(number){
+    parseFloat(number)
+    if(number < 1){
+       return number += .1;
+    } else{
+       return number = 1;
+    }
+
 }
+
+            
 
 function draw(){
     const tile = document.querySelectorAll('.tile');
     tile.forEach(tile => {
         tile.addEventListener('mouseover', ()=>{
-            tile.style.backgroundColor = 'black';
-            // tile.style.backgroundColor = makeRandomColor();
-            // tile.style.opacity = .5;
-            tile.style.opacity = makeDark(tile);
-            console.log(tile.style.opacity);
+            //tile.style.backgroundColor = 'black';
+            tile.style.backgroundColor = makeRandomColor();
+            tile.style.opacity = Number(tile.style.opacity) + 0.1
+            
         });
     });
 }
