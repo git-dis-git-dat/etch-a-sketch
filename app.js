@@ -1,5 +1,5 @@
 const container = document.querySelector('#container');
-
+const button = document.querySelector('#draw-btn');
 // function addTile(){
 //     const tile = document.createElement('div');
 //     tile.className = 'tile'
@@ -12,7 +12,7 @@ const container = document.querySelector('#container');
 function addTiles(number = 16){
     // clears any children on this element if they exist
     container.textContent = '';
-    // if(!Number.isInteger(number)){return alert('You must enter a whole number.')}
+    // if(!Number.isInteger(number) || number < 1){return alert('You must enter a whole number greater than 0.')}
 
     const dimension = 100 / number + '%';
     const totalTiles = number *= number;
@@ -26,7 +26,7 @@ function addTiles(number = 16){
     }  
 }
 
-addTiles();
+// addTiles();
 
 function draw(){
     const tile = document.querySelectorAll('.tile');
@@ -37,4 +37,14 @@ function draw(){
     });
 }
 
+// draw();
+
+button.addEventListener('click',()=>{
+    let number = prompt('Input a value 1-100');
+    number = parseInt(number);
+    addTiles(number);
+    draw();
+})
+
+addTiles();
 draw();
