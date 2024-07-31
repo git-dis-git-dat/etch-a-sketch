@@ -12,7 +12,6 @@ const button = document.querySelector('#draw-btn');
 function addTiles(number = 16){
     // clears any children on this element if they exist
     container.textContent = '';
-    // if(!Number.isInteger(number) || number < 1){return alert('You must enter a whole number greater than 0.')}
 
     const dimension = 100 / number + '%';
     const totalTiles = number *= number;
@@ -40,8 +39,9 @@ function draw(){
 // draw();
 
 button.addEventListener('click',()=>{
-    let number = prompt('Input a value 1-100');
+    let number = prompt('Input a value 1-100', 16);
     number = parseInt(number);
+    if(isNaN(number) || number < 1 || number > 100){return alert('You must enter a whole number greater than 0 and 100 or less.')}
     addTiles(number);
     draw();
 })
