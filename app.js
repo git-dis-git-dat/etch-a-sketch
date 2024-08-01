@@ -26,18 +26,6 @@ function makeRandomColor() {
     return color;
 }
 
-function makeDark(number){
-    parseFloat(number)
-    if(number < 1){
-       return number += .1;
-    } else{
-       return number = 1;
-    }
-
-}
-
-            
-
 function draw(){
     const tile = document.querySelectorAll('.tile');
     tile.forEach(tile => {
@@ -51,7 +39,7 @@ function draw(){
 }
 
 button.addEventListener('click',()=>{
-    let number = prompt('Input a value 1-100', 16);
+    let number = prompt('How big is your grid?', 16);
     number = parseInt(number);
     if(isNaN(number) || number < 1 || number > 100){return alert('You must enter a whole number between 1-100.')}
     addTiles(number);

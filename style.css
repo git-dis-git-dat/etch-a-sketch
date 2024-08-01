@@ -1,9 +1,19 @@
+body{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1vw;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
     height: 600px;
     width: 600px;
-    border: 1px solid black;
+    border: 1px dashed #FF8559;
+    
 }
 
 .tile{
@@ -11,4 +21,14 @@
     flex: 1 1 auto;
     /* background-color: aquamarine; */
     /* border: 1px solid black; */
+}
+
+#draw-btn {
+    background-color: #FF8559;
+    border-style: none;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: white;
+    height: 5vh;
+    /* align-self: center; */
 }
